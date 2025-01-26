@@ -7,10 +7,10 @@ services:
     restart: always
     command: --log-dir /app/logs
     ports:
-      - "3000:3000"
+      - "3001:3000"
     volumes:
-      - ./data:/data
-      - ./logs:/app/logs
+      - /home/github/new_api/data:/data
+      - /home/github/new_api/logs:/app/logs
     environment:
       - SQL_DSN=root:123456@tcp(mysql:3306)/new-api  # Point to the mysql service
       - REDIS_CONN_STRING=redis://redis
